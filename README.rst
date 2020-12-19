@@ -1,3 +1,16 @@
+Simple Python program to monitor five most recent tweets given a Twitter handle
+as a command-line argument.
+
+This is done over a weekend for fun and attempts to scrape the tweets from the
+user's profile page rather than through Twitter's API to avoid authentication
+with a developer account. As the tweets are downloaded into Twitter's React
+frontend, this Python program needs to scrape on the JS rendered html dom tree.
+
+Note, it will download Chromium into your home directory (e.g. ~/.pyppeteer/),
+if you haven't run anything that uses pyppeteer on before. This used to execute
+the Javascript that on the Twitter profile page. This will download Chromium only
+once.
+
 Setup::
 
     pip install -r requirements.txt
@@ -5,6 +18,14 @@ Setup::
 Example::
 
     ./tweetmon.py sammyjcomedian
+
+Simple API service (via flask)::
+
+    ./tweetmon.py -s sammyjcomedian
+    # to view tweets collected so far as a JSON string
+    curl http://127.0.0.1:5000/
+    # see headers (to check if Content-Type is set appropriately, for example)
+    curl -i http://127.0.0.1:5000/
 
 Scope
 =====
