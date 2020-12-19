@@ -4,4 +4,4 @@ Setup::
 
 Example::
 
-    ./tweenmon.py sammyjcomedian
+    ./tweetmon.py sammyjcomedian
