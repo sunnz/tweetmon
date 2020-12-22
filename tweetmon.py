@@ -41,7 +41,9 @@ def print_tweets(tweets):
 
 def app_run():
     """Function to run flask app in a separate thread, reads collected_tweets"""
-    app.run()
+    app.run(host='0.0.0.0')
+    # listening on 0.0.0.0 so that it works on local docker
+    # TODO find better ways to get this to work on docker
 
 @app.route('/', methods=['GET'])
 def get_collected_tweets():

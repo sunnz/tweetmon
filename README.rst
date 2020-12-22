@@ -22,6 +22,9 @@ Example::
 Simple API service (via flask)::
 
     ./tweetmon.py -s sammyjcomedian
+    # to build docker image and run the entire headless chromium and script in docker
+    docker build -t sunnz/tweetmon .
+    docker run -p 5000:5000 -it --rm sunnz/tweetmon sammyjcomedian
     # to view tweets collected so far as a JSON string
     curl http://127.0.0.1:5000/
     # see headers (to check if Content-Type is set appropriately, for example)
